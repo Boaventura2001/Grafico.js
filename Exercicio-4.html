@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+    <script src="chart.js"></script>
+
+    <style>
+        canvas{
+            width: 100%;
+            max-width: 900px;
+        }
+    </style>
+
+    
+</head>
+<body>
+
+    
+    <h2>Grafico em Barra usando Char.js</h2>
+    
+    <canvas id="jobs" ></canvas>
+    <canvas id="chart"></canvas>
+    <div class="centro">
+    <script>
+        var xValues = ["Niassa", "Cabo-Delgado","Nampula","Zambézia","Tete","Manica","Sofala","Inhambabe","Gaza",
+        "Maputo Província","Maputo Cidade"];
+        var yValues = [1.324, 2.980, 7.984, 3.515, 3.080, 3.575, 6.375, 3.207, 1.813, 6.082, 9.200];
+        var colors = ["grey", "thistle", "gold", "purple", "lime", "brown", "blue", "orange", "red", "green", "indigo"];
+
+        new Chart("jobs", {
+            type: "bar", data:{
+                labels: xValues, datasets: [{
+                    backgroundColor: colors, data: yValues
+                }]
+            }, options:{
+                legend: {display: false}, title: {
+                    display: true,
+                    text: "Distribuição de empresas no território moçambicano por província"
+                }
+            }
+        });
+
+        var yValues2 = [5.329, 16.224, 36.970, 13.157, 15.142, 17.094, 57.029, 9.420, 7.642, 42.637, 65.944];
+        var colors = ["grey", "thistle", "gold", "purple", "lime", "brown", "blue", "orange", "red", "green", "indigo"];
+
+        var xValues2 = ["Niassa", "Cabo-Delgado","Nampula","Zambézia","Tete","Manica","Sofala","Inhambabe","Gaza",
+        "Maputo Província","Maputo Cidade"];
+        new Chart("chart", {
+            type: "pie", data:{
+                labels: xValues2, datasets: [{
+                    backgroundColor: colors, data: yValues2
+                }]
+            }, options:{
+                title: {
+                    display: true,
+                    text: "Distribuição de emprego no território moçambicano por província"
+                }
+            }
+        });
+    </script>
+    </div>
+    
+</body>
+</html>
